@@ -18,7 +18,7 @@ case $qno in
     ;;
 
     3)
-        echo -e "\nQ3. Age of name of friends starting with p"
+        echo -e "\nQ3. Age of friends whose name starting with p"
         echo -e "\nAnswer:\n"
         awk '$1 ~ /^p/ {print $2}' name.txt
     ;;
@@ -36,33 +36,39 @@ case $qno in
     ;;
 
     6)
+        echo -e "\nQ5. Names starting with p or ending with a"
+        echo -e "\nAnswer:\n"
+        awk '$1 ~ /^p|a$/ {print $1}' name.txt
+    ;;
+
+    7)
         echo -e "\nQ6. Names having age>40"
         echo -e "\nAnswer:\n"
         awk '$2>40 {print $1}' name.txt
     ;;
 
-    7)
+    8)
         echo -e "\nQ7. Name not starting with p"
         echo -e "\nAnswer:\n"  
         awk '$1 !~ /^p/ {print $1}' name.txt
     ;;
 
-    8)
-        echo -e "\nQ8. Name starting with p or ending with a"
+    9)
+        echo -e "\nQ8. Name not starting with p or ending with a"
         echo -e "\nAnswer:\n" 
-        awk '$1 !~ /^p|^a/ {print $1}' name.txt
+        awk '$1 !~ /^p|a$/ {print $1}' name.txt
 
 
     ;;
 
-    9)
+    10)
         echo -e "\nQ9. Name starting with p and age>26"
         echo -e "\nAnswer:\n"
         awk '$1 ~ /^p/ && $2>26 {print $1}' name.txt
 
     ;;
 
-    10)
+    11)
         echo -e "\nQ10. Name starting with aeiou"
         echo -e "\nAnswer:\n" 
         awk '/^a|^e|^i|^o|^u/ {print $1}' name.txt
